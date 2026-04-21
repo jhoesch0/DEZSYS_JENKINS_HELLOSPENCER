@@ -20,8 +20,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    python3 -m pip install --upgrade pip
-                    pip3 install flask requests pytest
+                    python3 -m pip install --upgrade pip --break-system-packages
+                    pip3 install flask requests pytest --break-system-packages
                     if [ ! -f count.txt ]; then
                         echo "0" > count.txt
                     fi
